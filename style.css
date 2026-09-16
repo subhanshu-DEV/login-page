@@ -1,0 +1,327 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Login Card */
+.login-container {
+    width: 400px;
+    padding: 42px 40px;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* Heading */
+.login-container h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.login-container > p {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+/* Input fields */
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    height: 52px;
+    padding: 0 16px;
+    margin-bottom: 16px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 12px;
+    outline: none;
+    font-size: 15px;
+    background: #f9fafb;
+    transition: 0.3s;
+}
+
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    background: white;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.12);
+}
+
+/* Remember + Forgot */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 4px 0 24px;
+    font-size: 14px;
+}
+
+.login-options label {
+    color: #4b5563;
+    cursor: pointer;
+}
+
+.login-options input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+    accent-color: #667eea;
+    vertical-align: middle;
+}
+
+.login-options a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-options a:hover {
+    text-decoration: underline;
+}
+
+/* Login Button */
+button {
+    width: 100%;
+    height: 52px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Message */
+#message {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Signup */
+.signup {
+    margin-top: 28px !important;
+    margin-bottom: 0 !important;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.signup a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup a:hover {
+    text-decoration: underline;
+}
+/* ===== ANIMATIONS ===== */
+
+@keyframes cardEntry {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.login-container {
+    animation: cardEntry 0.8s ease-out;
+}
+
+
+/* Background Animation */
+
+body {
+    background: linear-gradient(
+        -45deg,
+        #667eea,
+        #764ba2,
+        #6a5acd,
+        #8360c3
+    );
+
+    background-size: 400% 400%;
+    animation: backgroundMove 10s ease infinite;
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Input Animation */
+
+form input[type="email"],
+form input[type="password"] {
+    transition: all 0.3s ease;
+}
+
+form input[type="email"]:hover,
+form input[type="password"]:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Button Animation */
+
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* Links Animation */
+
+.login-options a,
+.signup a {
+    transition: all 0.2s ease;
+}
+
+.login-options a:hover,
+.signup a:hover {
+    letter-spacing: 0.3px;
+}
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+.background-animation {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Animated circles */
+
+.background-animation span {
+    position: absolute;
+    display: block;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    filter: blur(2px);
+    animation: floating 12s infinite ease-in-out;
+}
+
+/* Different positions */
+
+.background-animation span:nth-child(1) {
+    width: 220px;
+    height: 220px;
+    left: 5%;
+    top: 10%;
+    animation-duration: 14s;
+}
+
+.background-animation span:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    right: 10%;
+    top: 15%;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+.background-animation span:nth-child(3) {
+    width: 250px;
+    height: 250px;
+    left: 20%;
+    bottom: -80px;
+    animation-duration: 16s;
+    animation-delay: 1s;
+}
+
+.background-animation span:nth-child(4) {
+    width: 130px;
+    height: 130px;
+    right: 25%;
+    bottom: 10%;
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+.background-animation span:nth-child(5) {
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 5%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+
+/* Floating movement */
+
+@keyframes floating {
+
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(80px, 40px) rotate(90deg);
+    }
+
+    50% {
+        transform: translate(30px, 120px) rotate(180deg);
+    }
+
+    75% {
+        transform: translate(-70px, 60px) rotate(270deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+/* Sign Up box initially hidden */
+.signup-container {
+    display: none;
+}
